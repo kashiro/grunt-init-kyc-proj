@@ -4,4 +4,4 @@
 
 // Do something
 
-}).call(this, window, document, jQuery, window.{%= name %});
+}).call(this, window, document, jQuery, window.{%= appName %});

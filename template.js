@@ -10,11 +10,12 @@
 exports.description = 'Create a clean proj, with mocha unit test';
 
 // Template-specific notes to be displayed before question prompts.
-exports.notes = '_Project name_ should be in camelCase.';
+exports.notes = '_Project name_ MUST be camelCase or hyphen-connected.';
 
 // Template-specific notes to be displayed after question prompts.
 exports.after = 'You should now install project dependencies with _npm ' +
-  'install_. After that, you may execute project tasks with _grunt server_.';
+  'install_. After that, you may execute project tasks with _grunt server_, ' +
+  '_grunt test_ or _grunt build_.';
 // Any existing file or directory matching this wildcard will cause a warning.
 exports.warnOn = '*';
 
@@ -33,7 +34,10 @@ exports.template = function(grunt, init, done) {
     init.prompt('author_url', 'http://www.kayac.com')
   ], function(err, props) {
     // A few additional properties.
-    props.dependencies = {jquery: props.jquery_version || '>= 1'};
+    props.appName = props.name.replace(/(\-[a-z])/g,
+      function ($1) {
+        return $1.toUpperCase().replace('-','');
+      });
     props.keywords = [];
 
     // Files to copy (and process).
@@ -47,7 +51,7 @@ exports.template = function(grunt, init, done) {
 
     // Generate package.json file, used by npm and grunt.
     init.writePackageJSON('package.json', {
-      name: 'jquery-plugin',
+      name: 'kyc-proj',
       version: '0.0.0-ignored',
       npm_test: 'grunt test',
       node_version: '>= 0.8.0',
