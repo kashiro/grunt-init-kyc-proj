@@ -19,7 +19,9 @@ git clone https://github.com/choristes/grunt-init-proj.git ~/.grunt-init/jquery
 
 _（Windowsでインストールする場合、インストール先は[grunt-initのドキュメント][grunt-init]にご参考ください。）_
 
-## Step 1. テンプレートを展開
+## 使い方
+
+### Step 1. テンプレートを展開
 
 ターミナルを起動して、プロジェクト用の空きディレクトリの下に移動して、
 以下のコマンドを実行してください。
@@ -32,7 +34,7 @@ _コマンドを実行する際、ディレクトリの下にテンプレート�
 _既存のファイルが上書きされる恐れがありますので、_
 _ディレクトリが空いているかどうかを確認した上で実行してください。_
 
-## Step 2. `grunt server`を使って実装
+### Step 2. `grunt server`を使って実装
 
 `grunt server`を実行すると、
 ローカルサーバーは自動的に立ち上がります。
@@ -42,14 +44,24 @@ _ディレクトリが空いているかどうかを確認した上で実行し�
 編集されたCompassとCoffeeファイルは自動的にコンパイルされ、
 ブラウザは自動的にリロードを行います。
 
-## Step 3. `grunt test`を使ってテスト
+### Step 3. `grunt test`を使ってテスト
 
 `grunt test`を実行すると、
+ローカルサーバーが立ち上がり、
 MochaとPhantomJSの組み合わせで、
 `test`ディレクトリ中のユニットテストが行われます。
 
-## Step 4. `grunt build`を使ってデプロイ
+### Step 4. `grunt build`を使ってデプロイ
 
 `grunt build`を実行すると、
 `dist`ディレクトリにデプロイ用のコードが生成されます。
 Compass、CSS、CoffeeScriptとJavaScriptファイルはHTML中の記述に従って統括されます。
+
+
+## ロードマップ
+
+* `grunt-init`のpromptは内部のいくつかしか使えませんので、
+  カスタマイズするのは難しいです。
+  Yeomanでカスタマイズ機能を試します。
+* `.jshintrc`の設定で、`common.js`と`main.js`でWarningがでますので、
+  調整が必要です。
