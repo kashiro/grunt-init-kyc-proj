@@ -1,0 +1,168 @@
+/* ====================================
+ *  Helper Classes from h5bp
+ * ==================================== */
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ====================================
+ *  Image mixins
+ * ==================================== */
+@mixin ir($img) {
+    @extend .ir;
+    display: block;
+    width: image-width($img);
+    height: image-height($img);
+    background-image: url($PATH + "/" + $img);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+@mixin irHalf($img) {
+    @include ir($img);
+    width: (image-width($img) / 2);
+    height: (image-height($img) / 2);
+    background-size: 100%;
+}
+
+@mixin bgi($img) {
+    background-image: url($PATH + "/" + $img);
+}
+
+@mixin bgiInline($img){
+    background-image: inline-image($PATH + "/" + $img);
+}
+
+@mixin iepng($src) {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageloader(src='#{$src}',sizingMethod='crop');
+}
+
+
+/* ====================================
+ *  Positioning mixin
+ * ==================================== */
+@mixin rect($x, $y, $w, $h) {
+    position: absolute;
+    top: #{$y}px; left: #{$x}px;
+    width: #{$w}px; height: #{$h}px;
+}
+
+@mixin pos($x, $y) {
+    position: absolute;
+    top: #{$y}px; left: #{$x}px;
+}
+
+@mixin size($w, $h) {
+    width: #{$w}px; height: #{$h}px;
+}
+
+@mixin bgclip($x, $y) {
+    background-position: -#{$x}px -#{$y}px;
+}
+
+@mixin center($w, $h) {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: #{$w}px; height: #{$h}px;
+    margin: #{-$h / 2}px 0 0 #{-$w / 2}px;
+}
+
+/* ====================================
+ *  Vendor prefix mixin
+ * ==================================== */
+$use-prefix-webkit: true;
+$use-prefix-moz   : true;
+$use-prefix-ms    : true;
+$use-prefix-o     : false;
+
+@mixin prefix($property, $value) {
+    @if $use-prefix-webkit { -webkit-#{$property}: #{$value}; }
+    @if $use-prefix-moz    {    -moz-#{$property}: #{$value}; }
+    @if $use-prefix-ms     {     -ms-#{$property}: #{$value}; }
+    @if $use-prefix-o      {      -o-#{$property}: #{$value}; }
+                                     #{$property}: #{$value};
+}
+
+@mixin prefixValue($property, $value) {
+    @if $use-prefix-webkit { #{$property}: -webkit-#{$value}; }
+    @if $use-prefix-moz    { #{$property}:    -moz-#{$value}; }
+    @if $use-prefix-ms     { #{$property}:     -ms-#{$value}; }
+    @if $use-prefix-o      { #{$property}:      -o-#{$value}; }
+                             #{$property}:         #{$value};
+}
+
+@mixin prefixBoth($property, $value) {
+    @if $use-prefix-webkit { -webkit-#{$property}: -webkit-#{$value}; }
+    @if $use-prefix-moz    {    -moz-#{$property}:    -moz-#{$value}; }
+    @if $use-prefix-ms     {     -ms-#{$property}:     -ms-#{$value}; }
+    @if $use-prefix-o      {      -o-#{$property}:      -o-#{$value}; }
+                                     #{$property}:         #{$value};
+}

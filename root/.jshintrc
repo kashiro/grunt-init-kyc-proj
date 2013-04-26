@@ -1,7 +1,9 @@
 {
+  "browser": true,
   "curly": true,
   "eqeqeq": true,
   "immed": true,
+  "jquery": true,
   "latedef": true,
   "newcap": true,
   "noarg": true,
@@ -11,5 +13,6 @@
   "boss": true,
   "eqnull": true,
   "node": true,
-  "es5": true
+  "es5": true,
+  "predef": ["jQuery", "$"]
 }
