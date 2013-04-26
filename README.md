@@ -1,26 +1,33 @@
-# grunt-init-jquery
+# grunt-init-kyc-proj
 
-> Create a jQuery plugin with [grunt-init][], including QUnit unit tests.
+> ウェブサイト制作用[grunt-init][]テンプレートです
 
 [grunt-init]: http://gruntjs.com/project-scaffolding
 
-## Installation
-If you haven't already done so, install [grunt-init][].
+## インストール
 
-Once grunt-init is installed, place this template in your `~/.grunt-init/` directory. It's recommended that you use git to clone this template into that directory, as follows:
+テンプレートをインストールする前に、
+[grunt-init][]のインストールが必須です。
 
+[grunt-init][]をインストールした後、
+このテンプレートを`~/.grunt-init/`に置いてください。
+
+また、ターミナルにて以下の`git clone`のコマンドを実行することで、インストールできます：
 ```
-git clone git@github.com:gruntjs/grunt-init-jquery.git ~/.grunt-init/jquery
-```
-
-_(Windows users, see [the documentation][grunt-init] for the correct destination directory path)_
-
-## Usage
-
-At the command-line, cd into an empty directory, run this command and follow the prompts.
-
-```
-grunt-init jquery
+git clone https://github.com/choristes/grunt-init-proj.git ~/.grunt-init/jquery
 ```
 
-_Note that this template will generate files in the current directory, so be sure to change to a new directory first if you don't want to overwrite existing files._
+_（Windowsでインストールする場合、インストール先は[grunt-initのドキュメント][grunt-init]にご参考ください。）_
+
+## 利用方法
+
+ターミナルを起動して、プロジェクト用の空きディレクトリの下に移動して、
+以下のコマンドを実行してください。
+
+```
+grunt-init kyc-proj
+```
+
+_コマンドを実行する際、ディレクトリの下にテンプレートのファイルが自動に生成されます。_
+_既存のファイルが上書きされる恐れがありますので、_
+_ディレクトリが空いているかどうかを確認した上で実行してください。_
