@@ -63,5 +63,3 @@ Compass、CSS、CoffeeScriptとJavaScriptファイルはHTML中の記述に従�
 * `grunt-init`のpromptは内部のいくつかしか使えませんので、
   カスタマイズするのは難しいです。
   Yeomanでカスタマイズ機能を試します。
-* `.jshintrc`の設定で、`common.js`と`main.js`でWarningがでますので、
-  調整が必要です。
