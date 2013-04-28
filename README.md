@@ -14,7 +14,7 @@
 
 また、ターミナルにて以下の`git clone`のコマンドを実行することで、インストールできます：
 ```
-git clone https://github.com/choristes/grunt-init-proj.git ~/.grunt-init/jquery
+git clone https://github.com/choristes/grunt-init-proj.git ~/.grunt-init/kyc-proj
 ```
 
 _（Windowsでインストールする場合、インストール先は[grunt-initのドキュメント][grunt-init]にご参考ください。）_
